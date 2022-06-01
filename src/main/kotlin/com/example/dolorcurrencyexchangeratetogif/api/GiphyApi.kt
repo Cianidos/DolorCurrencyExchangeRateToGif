@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 
 
-@FeignClient(name = "giphy", url = "\${api.giphy.url.base}", )
+@FeignClient(name = "giphy", url = "\${api.giphy.url.base}")
 interface GiphyApi {
 
     @GetMapping("\${api.giphy.url.rich}")
