@@ -11,6 +11,6 @@ interface GiphyApi {
     @GetMapping("\${api.giphy.url.rich}")
     fun findRandomRich(): GifResponse
 
-    @GetMapping("\${api.giphy.url.broke")
+    @GetMapping("\${api.giphy.url.broke}")
     fun findRandomBroke(): GifResponse
 }
