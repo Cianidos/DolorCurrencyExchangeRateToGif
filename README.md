@@ -12,3 +12,13 @@ Random gif dependend on currency exchange rate api
 ```
 ../DolorCurrencyExchangeRateToGif> ./gradlew bootRun
 ```
+
+# Docker
+## Build
+```
+DolorCurrencyExchangeRateToGif> docker build -t currency_to_gif .
+```
+## Run
+```
+ DolorCurrencyExchangeRateToGif> docker run -it -p 8080:8080 currency_to_gif
+```
