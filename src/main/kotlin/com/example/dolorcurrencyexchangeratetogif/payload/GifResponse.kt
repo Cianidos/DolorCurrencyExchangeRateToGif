@@ -5,12 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class GifResponse(
-    val data: GifObject,
+    val data: Map<*, *>,
+    val meta: Map<*, *>,
 )
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class GifObject(
-    val type: String,
-    val id: String,
-    val url: String,
-)
