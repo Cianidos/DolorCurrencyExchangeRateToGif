@@ -1,6 +1,6 @@
 package com.example.dolorcurrencyexchangeratetogif.controller
 
-import com.example.dolorcurrencyexchangeratetogif.payload.GifResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.GifResponse
 import com.example.dolorcurrencyexchangeratetogif.service.CurrencyToGifService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

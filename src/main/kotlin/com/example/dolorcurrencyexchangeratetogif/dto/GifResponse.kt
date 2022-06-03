@@ -1,4 +1,4 @@
-package com.example.dolorcurrencyexchangeratetogif.payload
+package com.example.dolorcurrencyexchangeratetogif.dto
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 

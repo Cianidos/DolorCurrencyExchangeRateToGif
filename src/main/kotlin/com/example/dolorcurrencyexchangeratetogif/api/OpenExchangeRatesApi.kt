@@ -1,6 +1,6 @@
 package com.example.dolorcurrencyexchangeratetogif.api
 
-import com.example.dolorcurrencyexchangeratetogif.payload.ExchangeRatesResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.ExchangeRatesResponse
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam

@@ -2,8 +2,8 @@ package com.example.dolorcurrencyexchangeratetogif.controller
 
 import com.example.dolorcurrencyexchangeratetogif.api.GiphyApi
 import com.example.dolorcurrencyexchangeratetogif.api.OpenExchangeRatesApi
-import com.example.dolorcurrencyexchangeratetogif.payload.ExchangeRatesResponse
-import com.example.dolorcurrencyexchangeratetogif.payload.GifResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.ExchangeRatesResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.GifResponse
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 

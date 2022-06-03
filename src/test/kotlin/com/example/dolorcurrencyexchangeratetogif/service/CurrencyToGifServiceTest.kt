@@ -4,8 +4,8 @@ import com.example.dolorcurrencyexchangeratetogif.api.GiphyApi
 import com.example.dolorcurrencyexchangeratetogif.api.OpenExchangeRatesApi
 import com.example.dolorcurrencyexchangeratetogif.exceptions.ThirdPartyServiceNotAvailableException
 import com.example.dolorcurrencyexchangeratetogif.exceptions.UnsupportedCurrencyException
-import com.example.dolorcurrencyexchangeratetogif.payload.ExchangeRatesResponse
-import com.example.dolorcurrencyexchangeratetogif.payload.GifResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.ExchangeRatesResponse
+import com.example.dolorcurrencyexchangeratetogif.dto.GifResponse
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrowsExactly
 import org.junit.jupiter.api.Test
