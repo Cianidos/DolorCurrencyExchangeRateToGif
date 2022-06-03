@@ -1,3 +1,3 @@
 package com.example.dolorcurrencyexchangeratetogif.exceptions
 
-class UnsupportedCurrencyException(message: String? = null) : Exception(message)
+class UnsupportedCurrencyException(message: String? = null) : RuntimeException(message)
