@@ -2,10 +2,10 @@ package com.example.dolorcurrencyexchangeratetogif.service
 
 import com.example.dolorcurrencyexchangeratetogif.api.GiphyApi
 import com.example.dolorcurrencyexchangeratetogif.api.OpenExchangeRatesApi
-import com.example.dolorcurrencyexchangeratetogif.exceptions.ThirdPartyServiceNotAvailableException
-import com.example.dolorcurrencyexchangeratetogif.exceptions.UnsupportedCurrencyException
 import com.example.dolorcurrencyexchangeratetogif.dto.ExchangeRatesResponse
 import com.example.dolorcurrencyexchangeratetogif.dto.GifResponse
+import com.example.dolorcurrencyexchangeratetogif.exceptions.ThirdPartyServiceNotAvailableException
+import com.example.dolorcurrencyexchangeratetogif.exceptions.UnsupportedCurrencyException
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -20,20 +20,22 @@ class CurrencyToGifService(
         get() = LocalDate.now().plusDays(-1).format(DateTimeFormatter.ISO_LOCAL_DATE)
 
     private fun isExchangeRateRise(currency: String): Boolean {
+        val latest: ExchangeRatesResponse
+        val yesterday: ExchangeRatesResponse
+
         try {
-            val latest: ExchangeRatesResponse = openExchangeRatesApi.getLatest()
-            val yesterday: ExchangeRatesResponse = openExchangeRatesApi.getByDate(yesterdayDateString)
-
-            if (!latest.rates.containsKey(currency))
-                throw UnsupportedCurrencyException("No \"$currency\" in latest exchange rates")
-            if (!yesterday.rates.containsKey(currency))
-                throw UnsupportedCurrencyException("No \"$currency\" in yesterday exchange rates")
-
-            return latest.rates[currency]!! > yesterday.rates[currency]!!
-
+            latest = openExchangeRatesApi.getLatest()
+            yesterday = openExchangeRatesApi.getByDate(yesterdayDateString)
         } catch (e: feign.FeignException) {
             throw ThirdPartyServiceNotAvailableException("OpenExchangeRates not available")
         }
+
+        if (!latest.rates.containsKey(currency))
+            throw UnsupportedCurrencyException("No \"$currency\" in latest exchange rates")
+        if (!yesterday.rates.containsKey(currency))
+            throw UnsupportedCurrencyException("No \"$currency\" in yesterday exchange rates")
+
+        return latest.rates[currency]!! > yesterday.rates[currency]!!
     }
 
     fun getGif(currency: String): GifResponse {
